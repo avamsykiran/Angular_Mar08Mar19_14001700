@@ -1,1 +1,59 @@
 https://github.com/avamsykiran/Angular_Mar08Mar19_14001700.git
+
+
+Angular 2 to 8
+-------------------------
+
+    Pre requisites
+    -------------------
+
+    Javascript ES6
+        Core javascript library
+                String
+                Math
+                Date
+                Object
+        Array Prototype Function
+            concat
+            splice
+            push
+            peek
+            ...etc
+        spread operator
+        JSON
+        Web Storage        
+        ES6 Sugar Syntax
+            Template Literals
+            Arrow Functions
+            Class
+            Destructed Assignemnt
+            ...etc
+
+    Lab Setup
+    ----------------------
+    Node                            https://nodejs.org/en/
+                node --version
+
+                server side javascript exectuion environment.
+
+    npm
+                npm --version
+
+                node package manager,
+                package in javascript is equivalent to the 'dependency' or 'library'
+
+    angular-cli
+
+                angular command line interface
+
+                automates a bunch deve related tasks.
+                
+                node package.
+
+                npm install -g @angualr/cli
+
+                ng --version
+
+    VS Code             https://code.visualstudio.com/download
+
+    
