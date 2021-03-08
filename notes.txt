@@ -56,4 +56,265 @@ Angular 2 to 8
 
     VS Code             https://code.visualstudio.com/download
 
-    
+    Angular
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                                
+                                Javascript SPA Framework
+
+        AngularJS       1
+
+                                typescript = javascript +  typeChcecking
+        Angular         2
+        Angular         4
+        Angular         5
+        Angular         6
+        Angular         7
+        
+        
+        Angular         8       we target this...
+
+
+        compiling typescript code into javascript is called transpelling...
+
+        Node is needed here to execute a variaty
+        of development tools like babel-typescript compiler or work
+        flow automation and a dev server.
+
+
+        Single Page Application
+        ----------------------------------------------------------------
+
+                only one html page in the entire application.
+
+                    this html page is composed of smart sections called Components.
+
+
+        Angular 8
+        -----------------------------------------------------------------
+
+             angular adds extandabilioty to html,
+                    we can create our own elements (tags) and attributes.   
+
+            Archetecture (angular building blocks)
+
+                Module
+
+                            is a class, that is decorated with @NgModule() decorator.
+
+                            the angular module is used to group Components,Directives,Pipes
+                            services,Guards and othet angular building block.
+
+                            @NgModule({
+                                declarations:[
+                                   //list of Components, Directives and Pipes         
+                                ],
+                                imports:[
+                                   //list of sub-modules         
+                                ],
+                                providers:[
+                                    //list of services
+                                ],
+                                bootstrap:[
+                                    //list of Components to be 
+                                    //instantiated immdeatly after instatiating the module
+                                ]
+                            })
+                            export class MyModule{
+                            }
+
+                            One single main module, inside which the 
+                            entire application resides, and 
+                            such main module is called ROOT modules 
+
+                            inside the ROOT modules, we can include (import)
+                            any number of sub-modules, and thes sub-modules are 
+                            called FEATURE modules.
+
+                            ecommerce                   ROOT Module
+                                | - orders              FEATURE Module    
+                                | - sales               FEATURE Module    
+                                | - inventory           FEATURE Module
+
+                Component
+                            is a class, that is decorated with @Component() decorator.
+                            each component represent one user-defiend html element (tag).
+
+                            Component = Template + Controller
+
+                                Template is going supply the html content that has to render
+                                Controller will suplly the script code that executes
+                                in reposne tot he events that happen on the template.
+
+
+                            @Component({
+                                selector:'login',
+                                templateUrl:'login-form.html'
+                            })
+                            export class LoginFormComponent {
+
+                                login(){
+                                    ...........
+                                }
+                            }    
+
+                            login-form.html
+                            -------------------------
+                                <form>
+                                    <input type="text" .... />
+                                    <input type="password" .... />
+                                    <button (click)="login()">Log in </button>
+                                </forn>
+
+
+                            index.html
+                            <html>
+                                <body>
+                                    <login></login>
+                                </body>
+                            </html>
+
+
+                            renderd index.html
+                            -------------------------------
+                            <html>
+                                <body>
+                                <form>
+                                    <input type="text" .... />
+                                    <input type="password" .... />
+                                    <button onClick="login()">Log in </button>
+                                </forn>
+                                    
+                                </body>
+                            </html>
+
+                Directive
+                           is a class, that is decorated with @Directive() decorator.
+                            each directive represent one user-defiend html attribte.
+
+                            @Directive({
+                                selector:'smart-colored',                                
+                            })
+                            export class SmartColorDirective {
+                                .........
+                            }                            
+
+                            <p smart-colored></p>
+                            <div smart-colored></div>
+
+                            <td smart-colored></td>
+
+                            in-built directive
+                            ----------------------------
+                                    Structural Directive
+                                        *ngIf
+                                        *ngFor
+                                        ngSwitch
+
+                                    Attribute Directives
+
+                                        routerLink
+                                        ngForm
+                                        ngModel
+                                        formGroup
+                                        formControlName .....etc
+
+                                    Event Directives
+
+                                        click
+                                        dblClick
+                                        mouseOver
+                                        mouseDown
+                                        blur
+                                        focus
+                                        change
+                                        ngSubmit
+                                            ..etc
+                Pipe
+                           is a class, that is decorated with @Pipe() decorator.
+                            used to tranform a piece of data into a different format ..!
+
+                        
+                            in-built pipes
+                            ---------------------
+
+                                lowercase
+                                uppercase
+                                number
+                                percentage
+                                currency
+                                date
+                                json
+                                async
+                                                {{"Vamsy"|lowercase}}
+
+                                @Pipe({
+                                   name:"inwords"         
+                                })
+                                export class InWordsPipe{
+                                    transform(value:number):string {
+                                        .......................
+                                    }
+                                }
+                                                {{billAmount|inwords}}
+
+                Service
+                         are classes that hold bussiness logic,and are marked
+                         by @Injectable() decorator   
+
+                         @Injectable({
+                            provided:'root'    
+                         })   
+                         export class AuthenticationService{
+
+                             login(){
+
+                             }
+
+                             logout(){
+                                 
+                             }
+
+                             regitration(){
+
+                             }
+                         }
+
+            Typescript
+            ---------------------------------------------
+
+                data types
+
+                        any
+                        string
+                        number
+                        boolean
+                        void
+
+
+                class Fields (data members) and local variables and function params
+
+                    class Employee{
+                        empId:number; //data members
+                        ename:string; //data members
+                        basic:number; //data members
+
+                        constructor(){
+                            //one class can have only one constructor
+                        }
+
+                        computeHra(percentage:number) : number {
+                            let hra : number; //local variables
+
+                            hra = this.basic*percentage;
+
+                            return hra;    
+                        }
+                    }
+
+                
+
+                        
+
+
+
+
