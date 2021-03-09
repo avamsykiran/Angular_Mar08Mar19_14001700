@@ -1,34 +1,14 @@
 https://github.com/avamsykiran/Angular_Mar08Mar19_14001700.git
 
-
-Angular 2 to 8
--------------------------
+Advanced Angular 2 to 8 .... 11
+--------------------------------
 
     Pre requisites
     -------------------
 
     Javascript ES6
-        Core javascript library
-                String
-                Math
-                Date
-                Object
-        Array Prototype Function
-            concat
-            splice
-            push
-            peek
-            ...etc
-        spread operator
-        JSON
-        Web Storage        
-        ES6 Sugar Syntax
-            Template Literals
-            Arrow Functions
-            Class
-            Destructed Assignemnt
-            ...etc
-
+    Angular 2
+        
     Lab Setup
     ----------------------
     Node                            https://nodejs.org/en/
