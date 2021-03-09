@@ -1,0 +1,28 @@
+{
+    "emps":[
+        {
+            "id":101,
+            "name":"Vamsy Kiran",
+            "basic":3456.0,
+            "joindate":"2021-02-24",
+            "gender":"m",
+            "officeComute":false
+        },
+        {
+            "id":102,
+            "name":"Srinivas",
+            "basic":2456.0,
+            "joindate":"2020-02-24",
+            "gender":"m",
+            "officeComute":true
+        },
+        {
+            "id":103,
+            "name":"Indhika",
+            "basic":8456.0,
+            "joindate":"2020-01-24",
+            "gender":"f",
+            "officeComute":true
+        }
+    ]
+}

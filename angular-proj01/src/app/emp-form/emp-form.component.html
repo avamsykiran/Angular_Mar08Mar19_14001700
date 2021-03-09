@@ -1,0 +1,15 @@
+<section class="container-fluid p-4">
+    <div class="col-sm-5 mx-auto">
+        <h3>New Employee</h3>
+        <form [formGroup]="empForm">
+            <div class="form-group">
+                <label class="form-label">Employee Id</label>
+                <input type="number" formControlName="id" class="form-control"/>
+                <div *ngIf="id.invalid && (id.touched || id.dirty)" class="alert alert-danger">
+                    <span *ngIf="id.errors.required">This field is mandate</span>        
+                    <span *ngIf="id.errors.min">Non negative and Non zero number expected</span>        
+                </div>
+            </div>    
+        </form>
+    </div>
+</section>

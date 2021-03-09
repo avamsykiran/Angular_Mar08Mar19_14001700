@@ -291,7 +291,51 @@ Advanced Angular 2 to 8 .... 11
                         }
                     }
 
-                
+    Angular CLI
+    ----------------------------------------------------------
+
+        ng new Proj-name
+
+        inside the project:
+
+            ng generate <BuildingBlock> <blockName>
+
+            ng g component componentName
+            ng g service serviceName
+
+            .................etc
+
+            npm start  (or) ng serve --port 5656 -o         
+                                            compile
+                                            build
+                                            start angualr dev server
+                                            launch the app on browser
+
+            ng build
+                                            compile
+                                            build
+                                            minify
+
+    Angular Bindings                                            
+    -----------------------------
+
+    interpolation
+            {{ }}
+
+    one-way data binding
+            [ ]
+
+    two way data binding
+            [(  )]
+
+    event binding
+            (   )
+
+    style/(class) binding
+            [class]="{className:booleanFlag,classNAme2:booleanFlag2}"
+                    
+
+
 
                         
 
