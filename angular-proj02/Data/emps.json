@@ -1,4 +1,18 @@
 {
+  "depts":[
+    {
+      "id":1,
+      "name":"Development"      
+    },
+    {
+      "id":2,
+      "name":"Operations"      
+    },
+    {
+      "id":3,
+      "name":"Testing"      
+    }
+  ],
   "emps": [
     {
       "id": 101,

@@ -1,0 +1,17 @@
+<section class="container-fluid p-4">
+
+    <p *ngIf="msg" class="alert">
+        <strong>{{msg}}</strong>
+    </p>
+
+    <div class="card-columns">
+
+        <app-depts-form></app-depts-form>
+
+        <ng-container *ngIf="depts">
+            <app-dept-view *ngFor="let d of depts" [dept]="d">            
+            </app-dept-view>
+        </ng-container>
+        
+    </div>
+</section>

@@ -1,4 +1,3 @@
-<section class="container-fluid p-4">
 
     <h3>Employee List</h3>
 
@@ -28,7 +27,7 @@
                 <td>{{e.joindate|date:'dd-MMM-yyyy'}}</td>
                 <td>{{e.officeComute?"YES":"NO"}}</td>
                 <td>
-                    <a [routerLink]="['/editEmp',e.id]" class="btn mr-4">
+                    <a [routerLink]="['/emps/edit',e.id]" class="btn mr-4">
                         <i class="fa fa-pencil"> EDIT </i>
                     </a>
                     <button class="btn mr-4" (click)="delete(e.id)">
@@ -38,4 +37,3 @@
             </tr>
         </tbody>
     </table>
-</section>
