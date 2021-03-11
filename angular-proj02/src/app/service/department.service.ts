@@ -26,10 +26,10 @@ export class DepartmentService {
   }
 
   add(dept:Department):Observable<Department>{
-    return this.httpClient.post<Department>(this.deptApiUrl,dept);
+    return this.httpClient.post<Department>(this.deptApiUrl,{id:dept.id,name:dept.name});
   }
 
   update(dept:Department):Observable<Department>{
-    return this.httpClient.put<Department>(`${this.deptApiUrl}/${dept.id}`,dept);
+    return this.httpClient.put<Department>(`${this.deptApiUrl}/${dept.id}`,{id:dept.id,name:dept.name});
   }
 }

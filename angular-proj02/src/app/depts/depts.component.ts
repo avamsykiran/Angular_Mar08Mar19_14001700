@@ -25,4 +25,12 @@ export class DeptsComponent implements OnInit {
     );
   }
 
+  addDept(dept:Department){
+    this.msg="Please wit while we load data...!";
+    this.deptService.add(dept).subscribe(
+      (data)=>{this.depts.push(data);},
+      (err)=>{this.msg=err.message?err.message:err;},
+      ()=>{this.msg=null;}
+    );
+  }
 }
