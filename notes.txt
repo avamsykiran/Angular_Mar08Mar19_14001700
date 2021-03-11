@@ -335,6 +335,29 @@ Advanced Angular 2 to 8 .... 11
             [class]="{className:booleanFlag,classNAme2:booleanFlag2}"
                     
 
+    Feature Modules
+------------------------------------------------------------------------------
+
+    Domain Modules
+            one spoecific function Domain.
+
+            only root component to be exported.
+            all other components are tailored to the root component only.
+
+    Routing Modules
+
+            is used to isolating Routing configuaration.
+
+
+    Service Modules
+
+            is used to hold only services
+
+    Widget Modules  / Shared Modules
+
+            is used to hold reusable components, pipes, directives.
+
+    
 
 
                         

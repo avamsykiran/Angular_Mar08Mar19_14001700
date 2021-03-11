@@ -18,6 +18,10 @@ export class DeptsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(){
     this.deptService.getAll().subscribe(
       (data)=>{this.depts=data;},
       (err)=>{this.msg=err.message?err.message:err;},
@@ -28,9 +32,35 @@ export class DeptsComponent implements OnInit {
   addDept(dept:Department){
     this.msg="Please wit while we load data...!";
     this.deptService.add(dept).subscribe(
-      (data)=>{this.depts.push(data);},
+      (data)=>{this.loadData();},
       (err)=>{this.msg=err.message?err.message:err;},
       ()=>{this.msg=null;}
     );
+  }
+
+  updateDept(dept:Department){
+    this.msg="Please wit while we load data...!";
+    this.deptService.update(dept).subscribe(
+      (data)=>{this.loadData();},
+      (err)=>{this.msg=err.message?err.message:err;},
+      ()=>{this.msg=null;}
+    );
+  }
+
+  delete(id:number){
+    this.msg="Please wit while we load data...!";
+    this.deptService.delete(id).subscribe(
+      ()=>{this.loadData();},
+      (err)=>{this.msg=err.message?err.message:err;},
+      ()=>{this.msg=null;}
+    );
+  }
+
+  edit(id:number){
+    this.depts.find(d => d.id==id).isEditing=true;
+  }
+  
+  cancelEdit(id:number){
+    this.depts.find(d => d.id==id).isEditing=false;
   }
 }

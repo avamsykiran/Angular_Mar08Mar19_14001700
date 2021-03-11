@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Department } from '../model/department';
 
 @Component({
@@ -11,11 +11,26 @@ export class DeptViewComponent implements OnInit {
   @Input()
   dept:Department;
 
+  @Output()
+  onEdit:EventEmitter<number>;
+  
+  @Output()
+  onDelete:EventEmitter<number>;
+
   constructor() { 
     this.dept=null;
+    this.onEdit=new EventEmitter<number>();
+    this.onDelete=new EventEmitter<number>();
   }
 
   ngOnInit(): void {
   }
 
+  notifyEditClicked(){
+    this.onEdit.emit(this.dept.id);
+  }
+  
+  notifyDeleteClicked(){
+    this.onDelete.emit(this.dept.id);
+  }
 }

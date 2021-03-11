@@ -6,10 +6,10 @@
         <strong>{{dept.name}}</strong>
     </div>
     <div class="card-footer text-right">
-        <button class="btn btn-sm mr-2">
+        <button class="btn btn-sm mr-2" (click)="notifyEditClicked()">
             <i class="fa fa-pencil"> Edit</i>
         </button>
-        <button class="btn btn-sm mr-2">
+        <button class="btn btn-sm mr-2" (click)="notifyDeleteClicked()">
             <i class="fa fa-trash"> Delete</i>
         </button>
     </div>
