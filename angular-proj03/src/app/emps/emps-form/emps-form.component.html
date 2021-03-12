@@ -1,0 +1,72 @@
+
+    <div class="col-sm-10 mx-auto">
+        <h3> {{isEditing?"Edit":"New"}} Employee</h3>
+
+        <p *ngIf="msg" class="alert alert-info">
+            <strong>{{msg}}</strong>
+        </p>    
+
+        <form [formGroup]="empForm" (ngSubmit)="empFormSubmited()">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label class="form-label">Employee Id</label>
+                        <input type="number" formControlName="id" 
+                        class="form-control" [readonly]="isEditing"/>
+                        <div *ngIf="id.invalid && (id.touched || id.dirty)" class="alert alert-danger">
+                            <span *ngIf="id.errors.required">This field is mandate</span>
+                            <span *ngIf="id.errors.min">Non negative and Non zero number expected</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" formControlName="name" class="form-control" />
+                        <div *ngIf="name.invalid && (name.touched || name.dirty)" class="alert alert-danger">
+                            <span *ngIf="name.errors.required">This field is mandate</span>
+                            <span *ngIf="name.errors.minlength">Atleast 5 chars are expected</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Basic </label>
+                        <input type="number" formControlName="basic" class="form-control" />
+                        <div *ngIf="basic.invalid && (basic.touched || basic.dirty)" class="alert alert-danger">
+                            <span *ngIf="basic.errors.required">This field is mandate</span>
+                            <span *ngIf="basic.errors.min">Non negative number expected</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label class="form-label">Join Date</label>
+                        <input type="date" formControlName="joindate" class="form-control" />
+                        <div *ngIf="joindate.invalid && (joindate.touched || joindate.dirty)"
+                            class="alert alert-danger">
+                            <span *ngIf="joindate.errors.required">This field is mandate</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <select formControlName="gender" class="form-control">
+                            <option value="">---SELECT GENDER---</option>
+                            <option value="m"><i class="fa fa-male"> Male</i></option>
+                            <option value="f"><i class="fa fa-female"> Female</i></option>
+                        </select>
+                        <div *ngIf="gender.invalid && (gender.touched || gender.dirty)" class="alert alert-danger">
+                            <span *ngIf="gender.errors.required">This field is mandate</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label">
+                            <input type="checkbox" formControlName="officeComute" class="form-check-control" />
+                            I wish to use Office Commute.
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" [disabled]="empForm.invalid">
+                            Save Employee
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

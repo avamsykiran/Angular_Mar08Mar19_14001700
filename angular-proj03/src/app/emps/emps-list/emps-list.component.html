@@ -1,0 +1,39 @@
+
+    <h3>Employee List</h3>
+
+    <p class="alert alert-info" *ngIf="msg"><strong>{{msg}}</strong></p>
+
+    <table *ngIf="emps" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Employee#</th>
+                <th>Name</th>                
+                <th>Gender</th>
+                <th>Basic</th>
+                <th>HireDate</th>
+                <th>Using Office Comute</th>  
+                <th>Action</th>              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emps">
+                <td>{{e.id}}</td>
+                <td>{{e.name|uppercase}}</td>
+                <td> 
+                    <i [class]="{'fa':true,'fa-male':e.gender=='m','fa-female':e.gender=='f'}"></i> 
+                    {{e.gender|uppercase}}
+                </td>
+                <td>{{e.basic|currency:'INR'}}</td>
+                <td>{{e.joindate|date:'dd-MMM-yyyy'}}</td>
+                <td>{{e.officeComute?"YES":"NO"}}</td>
+                <td>
+                    <a [routerLink]="['/emps/edit',e.id]" class="btn mr-4">
+                        <i class="fa fa-pencil"> EDIT </i>
+                    </a>
+                    <button class="btn mr-4" (click)="delete(e.id)">
+                        <i class="fa fa-trash"> DELETE </i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
