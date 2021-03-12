@@ -357,10 +357,91 @@ Advanced Angular 2 to 8 .... 11
 
             is used to hold reusable components, pipes, directives.
 
+
+   Dependency Injection
+   ------------------------------------------
+
+    Injectables     (Services)
+      
     
+    Injector        supply objects of the services
 
+        creats a rootInjector at the tiem bootstraping the angular project.
 
+        rootInjector
+            oneInjectorPerFeatureModule
+                oneInjectorPerConsumer
+
+    Provider        create objects of the services
+
+        //a single obj of this service is created by the rootProvider
+        //a single obj of this service is supplied by the rootInjector
+        @Injectable({
+            providedIn:'root'
+        })          
+        export class Service1{  
+            data:string;....
+        }
+        --------------------------------------------
+        //a single obj of this service is created by the rootProvider
+            for eagarly loaded modules
+            and each lazy loaded moduels get a new object of the service in 
+            thgat module specific provider
+        //a single obj of this service is supplied by the rootInjector
+            for eagarly loaded modules
+            and each lazy loaded moduels  a new object of the service in 
+            supplied in the module specific provider            
+        @Injectable({
+            providedIn:'any'
+        })          
+        export class Service2{  
+            data:string;....
+        }
+        --------------------------------------------
+        //a single obj of this service is created by the workspaceProvider
+        //and supplied by workspaceinjector
+        // a single workspace can be a combiantion of a few projects.            
+        @Injectable({
+            providedIn:'platform'
+        })          
+        export class Servicee3{  
+            data:string;....
+        }
+        ------------------------------------------------------
+        @Injectable()          
+        export class Service4{  
+            data:string;....
+        }
+
+        @NgModule({
+            .....,
+            providers:[Service4]
+        }) //a moduel spceific object of the service is managed
+        export class MyFeatureModule{
+            
+        }
+
+        @Component({
+            .....,
+            providers:[Service4]
+        }) //a component spceific object of the service is managed
+        export class MyComponent{
+            
+        }
+
+    consuemrs (Component, Pipe, Directive)     
+
+    Interceptors
+    --------------------------
+
+        pA----(...access to his conversion - interceptor....)---pB
+
+        interceptor 
+            1. can intercept the conversation and
+                to some modifications before the conversation
+                is received or send.
                         
+        angular (HttpClient) -------(HttpInterceptor)------------- REST API                        
 
 
 

@@ -56,6 +56,16 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="form-label">Department</label>
+                        <select formControlName="deptId" class="form-control">
+                            <option value="">---SELECT DEPARTMENT---</option>                            
+                            <option *ngFor="let d of depts" [value]="d.id">{{d.name}}</option>
+                        </select>
+                        <div *ngIf="deptId.invalid && (deptId.touched || deptId.dirty)" class="alert alert-danger">
+                            <span *ngIf="deptId.errors.required">This field is mandate</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="form-check-label">
                             <input type="checkbox" formControlName="officeComute" class="form-check-control" />
                             I wish to use Office Commute.

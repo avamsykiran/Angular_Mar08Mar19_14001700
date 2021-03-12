@@ -1,1 +1,23 @@
-<p>depts works!</p>
+<section class="container-fluid p-4">
+
+    <p *ngIf="msg" class="alert">
+        <strong>{{msg}}</strong>
+    </p>
+
+    <div class="card-columns">
+        <app-depts-form (onSaveDept)="addDept($event)"></app-depts-form>
+
+        <ng-container *ngIf="depts">
+            <ng-container *ngFor="let d of depts">
+                <app-dept-view [dept]="d" *ngIf="!d.isEditing" 
+                (onEdit)="edit($event)" (onDelete)="delete($event)">
+                </app-dept-view>                
+                <app-depts-form [dept]="d" [isUpdating]="true" 
+                (onCancelEdit)="cancelEdit($event)"
+                (onSaveDept)="updateDept($event)" *ngIf="d.isEditing">                    
+                </app-depts-form>                
+            </ng-container>
+        </ng-container>
+
+    </div>
+</section>

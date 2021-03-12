@@ -12,6 +12,7 @@
                 <th>Basic</th>
                 <th>HireDate</th>
                 <th>Using Office Comute</th>  
+                <th>Department</th>
                 <th>Action</th>              
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{e.basic|currency:'INR'}}</td>
                 <td>{{e.joindate|date:'dd-MMM-yyyy'}}</td>
                 <td>{{e.officeComute?"YES":"NO"}}</td>
+                <td>{{e.deptName}}</td>
                 <td>
                     <a [routerLink]="['/emps/edit',e.id]" class="btn mr-4">
                         <i class="fa fa-pencil"> EDIT </i>

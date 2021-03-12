@@ -16,7 +16,7 @@ export class EmpService {
   }
 
   getAll():Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>(this.empApiUrl);
+    return this.httpClient.get<Employee[]>(this.empApiUrl);    
   }
 
   getById(id:number):Observable<Employee>{

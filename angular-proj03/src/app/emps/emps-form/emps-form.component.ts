@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { DeptService } from 'src/app/core/dept.service';
 import { EmpService } from 'src/app/core/emp.service';
+import { Department } from 'src/app/core/model/department';
 import { Employee } from 'src/app/core/model/employee';
 
 @Component({
@@ -18,14 +20,18 @@ export class EmpsFormComponent implements OnInit {
   joindate:FormControl;
   gender:FormControl;
   officeComute:FormControl;
+  deptId:FormControl;
 
   empForm:FormGroup;
 
   msg : string;
 
+  depts:Department[];
+
   isEditing:boolean;
   constructor(
     private empService:EmpService,
+    private deptService:DeptService,
     private actRoute : ActivatedRoute) { 
 
     this.isEditing=false;
@@ -36,6 +42,7 @@ export class EmpsFormComponent implements OnInit {
     this.joindate=new FormControl(new Date(),[Validators.required]);
     this.gender=new FormControl('',[Validators.required]);
     this.officeComute=new FormControl(false);
+    this.deptId=new FormControl('',[Validators.required]);
 
     this.empForm=new FormGroup({
       id:this.id,
@@ -43,18 +50,26 @@ export class EmpsFormComponent implements OnInit {
       basic:this.basic,
       joindate:this.joindate,
       gender:this.gender,
-      officeComute:this.officeComute
+      officeComute:this.officeComute,
+      deptId:this.deptId
     });
+
+    this.depts=[];
   }
 
   ngOnInit(): void {
+
+    this.deptService.getAll().subscribe(
+      (data) => {this.depts=data;console.log(JSON.stringify(data));}
+    );      
+
     this.actRoute.params.subscribe(
       (prms) => {
         if(prms.id){
           this.empService.getById(prms.id).subscribe(
-            (data) => {              
+            (data) => {                            
               this.isEditing=true;
-              this.empForm.setValue(data);
+              this.empForm.setValue(data);              
             }
           );
         }

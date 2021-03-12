@@ -5,4 +5,6 @@ export class Employee {
     joindate:Date;
     gender:string;
     officeComute:boolean;
+    deptId:number;
+    deptName:string;
 }
