@@ -1,5 +1,9 @@
 <section class="container-fluid p-4">
 
+    <button mat-raised-button color="primary" (click)="showAddDept()"> 
+        New Department 
+    </button>
+
     <p *ngIf="msg" class="alert">
         <strong>{{msg}}</strong>
     </p>

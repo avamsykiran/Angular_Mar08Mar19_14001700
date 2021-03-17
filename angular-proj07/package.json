@@ -1,14 +1,14 @@
 {
-  "name": "angular-proj05",
+  "name": "angular-proj07",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 5656 -o",
+    "start": "ng serve --port 7777 -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api": "json-server --port 9999 --watch ./Data/emps.json"
+    "api":"json-server-auth --port 9191 --watch ./Data/emps.json"
   },
   "private": true,
   "dependencies": {
@@ -22,9 +22,8 @@
     "@angular/platform-browser": "~11.0.9",
     "@angular/platform-browser-dynamic": "~11.0.9",
     "@angular/router": "~11.0.9",
-    "bootstrap": "^4.6.0",
-    "font-awesome": "^4.7.0",
     "json-server": "^0.16.3",
+    "json-server-auth": "^2.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

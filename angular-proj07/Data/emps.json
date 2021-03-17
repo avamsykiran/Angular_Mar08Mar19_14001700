@@ -1,4 +1,16 @@
 {
+  "users":[
+    {
+      "email":"admin@hrm.com",
+      "password":"password1",
+      "role":"admin"
+    },
+    {
+      "email":"hrassociate1@hrm.com",
+      "password":"password1",
+      "role":"hr_associate"
+    }
+  ],
   "depts": [
     {
       "id": 1,

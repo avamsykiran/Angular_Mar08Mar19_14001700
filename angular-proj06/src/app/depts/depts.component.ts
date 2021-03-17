@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DeptService } from '../core/dept.service';
 import { Department } from '../core/model/department';
+import { MatDialog } from '@angular/material/dialog';
+import { DeptsFormComponent } from './depts-form/depts-form.component';
 
 @Component({
   selector: 'app-depts',
@@ -11,9 +13,15 @@ export class DeptsComponent implements OnInit {
   depts:Department[];
   msg:string;
 
-  constructor(private deptService:DeptService) { 
+  constructor(
+    private deptService:DeptService,
+    private dialog:MatDialog) { 
     this.msg="Loading Data! Please Wait..!"
     this.depts=null;
+  }
+
+  showAddDept(){
+    this.dialog.open(DeptsFormComponent,{width:'250px'});
   }
 
   ngOnInit(): void {

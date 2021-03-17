@@ -6,6 +6,7 @@ import { DeptsRoutingModule } from './depts-routing.module';
 import { DeptsComponent } from './depts.component';
 import { DeptViewComponent } from './dept-view/dept-view.component';
 import { DeptsFormComponent } from './depts-form/depts-form.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [DeptsComponent, DeptViewComponent, DeptsFormComponent],

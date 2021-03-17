@@ -8,7 +8,9 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent {
   title : string;
+
   constructor(){
     this.title=environment.appTitle;
   }
+
 }
