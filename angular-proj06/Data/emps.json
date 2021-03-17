@@ -1,0 +1,58 @@
+{
+  "depts": [
+    {
+      "id": 1,
+      "name": "Development"
+    },
+    {
+      "id": 2,
+      "name": "Operations"
+    },
+    {
+      "id": 3,
+      "name": "Testing"
+    },
+    {
+      "id": 4,
+      "name": "Accademy"
+    }
+  ],
+  "emps": [
+    {
+      "id": 101,
+      "name": "Vamsy Kiran",
+      "basic": 3456,
+      "joindate": "2021-02-24",
+      "gender": "m",
+      "officeComute": false,
+      "deptId":1
+    },
+    {
+      "id": 102,
+      "name": "Srinivas",
+      "basic": 2456,
+      "joindate": "2020-02-24",
+      "gender": "m",
+      "officeComute": true,
+      "deptId":1
+    },
+    {
+      "id": 103,
+      "name": "Indhika Valli",
+      "basic": 8456,
+      "joindate": "2020-01-24",
+      "gender": "f",
+      "officeComute": true,
+      "deptId":3
+    },
+    {
+      "id": 201,
+      "name": "Suseela",
+      "basic": 45200,
+      "joindate": "2021-03-16",
+      "gender": "f",
+      "officeComute": true,
+      "deptId":2
+    }
+  ]
+}

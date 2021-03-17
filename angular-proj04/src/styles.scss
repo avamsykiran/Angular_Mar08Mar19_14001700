@@ -1,0 +1,49 @@
+@import './styleVariables';
+
+body{
+    padding: $stdIndent;
+    font-family: $fontName;
+}
+
+h1,h2,h3,h4,h5,h6{
+    $stdIndent: 30px !global;
+    padding: $stdIndent;
+}
+
+div{
+    padding: $stdIndent;
+    border:1px solid $borderColor;
+
+    p{
+        padding: $stdIndent;
+        border-left: 5px solid $borderColor;
+
+        text:{
+            align:center;
+            decoration: underline;
+        }
+        
+        span{
+            font-weight: bolder;
+        }
+    }
+}
+
+@mixin alert($bgColor:white,$txtColor:black){
+    margin:auto;
+    width:75%;
+    padding:15px;    
+    text-align: left;    
+    text-decoration:none;
+    background-color:$bgColor;
+    color:$txtColor;
+}
+
+.alert-danger{
+    @include alert(red,white);    
+}
+
+.alert-info{
+    @include alert(green);    
+}
+

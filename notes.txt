@@ -443,6 +443,217 @@ Advanced Angular 2 to 8 .... 11
                         
         angular (HttpClient) -------(HttpInterceptor)------------- REST API                        
 
+    SASS
+    -----------------------------------
+
+        SASS is called CSS pre-processor.
+
+        give programatic flavour to CSS.
+
+        SASS reduces repitativeness in css.
+
+        .css        CSS is directly understood by all browsers
+        .scss       SASS is to be transpelled into css before
+                    given to a browser.
+
+        Variables
+        ==========
+            $var: value;
+
+                    string
+                    number
+                    boolean
+                    null
+                    list
+            
+        Nested Rules
+        ----------------------
+
+        CSS
+
+        div p{
+            .........
+        }            
+
+        div p span{
+            ............
+        }
+        
+        SCSS
+
+        div{
+            p{
+                span{
+                    
+                }
+            }
+        }
 
 
+    Angular Features Version Wise
+    -------------------------------------
 
+    Angular 2
+        Released in 2016
+        Complete rewrite of Angular 1
+        Written entirely in typescript
+        Component-based instead of Controller
+        ES6 and typescript supported
+        More testable as component-based
+        Support for Mobile/Low-end devices
+        Up to typescript 1.8 is supported
+
+    Angular 3:
+        Why we don’t have Angular 3?
+        — Angular is being developed in a MonoRepo it means a single repo for everything. @angular/core, @angular/compiler, @angular/router etc are in the same repo and may have their own versions.
+        — The angular router was already in v3 and releasing angular 3 with router 4 will create confusion
+        — To avoid this confusion they decided to skip the version 3 and release with version 4.0.0 so that every major dependency in the MonoRepo are on the right track.
+
+    Angular 4
+        Released in 2017
+        Changes in core library
+        Angular 4 is simply the next version of angular 2, 
+        the underlying concept is the same & is an inheritance from Angular 2
+        Lot of performance improvement is made to reduce size of compiler generated code
+        Typescript 2.1 & 2.2 compatible 
+            — all feature of ts 2.1 & 2.2 are supported in Angular 4 application
+        Animation features are separated from @angular/core to @angular/animation
+            — don’t import @animation packages into the application to reduce bundle size 
+            and it gives the performance improvement.       
+        Else block in *ngIf introduced:
+            — Instead of writing 2 ngIf for else , 
+            simply add below code in component template:
+                *ngIf=”yourCondition; else myFalsyTemplate”
+                <ng-template #myFalsyTemplate>Else Html</ng-template>
+
+    Angular 5
+        Released 1st November 2017
+        Build optimizer: It helps to remove unnecessary code from application
+        Angular Universal State Transfer API and DOM Support 
+            — By using this feature, we can now share the state of the application 
+                between the server side and client side very easily.
+        Compiler Improvements: 
+            This is one of the very nice features of Angular 5, 
+            which improved the support of incremental compilation of an application.
+        Preserve White space: 
+            To remove unnecessary new lines, tabs and white spaces we can 
+            add below code(decrease bundle size)
+                // in component decorator you can now add:
+                    “preserveWhitespaces: false”
+                // or in tsconfig.json:
+                    “angularCompilerOptions”: { “preserveWhitespaces”: false}`
+
+        Increased the standardization across all browsers: 
+            For internationalization we were depending on `i18n` , 
+            but in ng 5 provides a new date, number, and currency pipes 
+            which increases the internationalization across all the browsers 
+            and eliminates the need of i18n polyfills.
+        
+        exportAs: In Angular 5, multiple names support for both directives and components
+        HttpClient: 
+            until Angualar 4.3 @angular/HTTP was been used which is now 
+            depreciated and in Angular 5 a new module called HttpClientModule is 
+            introduced which comes under @angular/common/http package.
+        
+        Few new Router Life-cycle Events being added in Angular 5: 
+            In Angular 5 few new life cycle events being added to the router and those are:
+                ActivationStart, ActivationEnd, ChildActivationStart, ChildActivationEnd, 
+                GuardsCheckStart, GuardsCheckEnd, ResolveStart and ResolveEnd.
+
+        Angular 5 supports TypeScript 2.3 version.
+            Improved in faster Compiler support:
+            A huge improvement made in an Angular compiler to make the development 
+            build faster. We can now take advantage of by running the below command 
+            in our development terminal window to make the build faster.
+
+            ng serve/s — aot
+    
+    Angular 6
+            Released on April 2018
+            This release is focused less on the underlying framework, 
+            and more on tool-chain and on making it easier to move quickly with angular 
+            in the future
+
+            No major breaking changes
+            
+            Dependency on RxJS 6 (this upgrade have breaking changes but CLI 
+            command helps in migrating from older version of RxJS)
+
+            Synchronizes major version number of the:
+                — Angular framework
+                — Angular CLI
+                — Angular Material + CDK
+
+                All of the above are now version 6.0.0, 
+                
+            Remove support for <template> tag and “<ng-template>” should be used.
+
+            Registering provider: To register new service/provider, 
+            we import Service into module and then inject in provider array. e.g:
+            
+            // app.module.ts
+                import {MyService} from './my-service';
+                    ...
+                    providers: [...MyService]
+                    ... 
+
+            But after this upgrade you will be able to add providedIn property 
+            in injectable decorator. e.g:
+            
+            // MyService.ts
+            @Injectable({ providedIn: 'root'})
+            export class MyService{}
+                
+            CLI Changes: Two new commands have been introduced
+            
+            — ng update <package>
+            * Analyse package.json and recommend updates to your application
+            * 3rd parties can provide update scripts using schematics
+            * automatically update code for breaking changes
+            * staying update and low maintenance
+        
+            — ng add
+            * add new capablities to your applicaiton
+            * e.g ng add @angular/material : 
+
+    Angular 7:
+            Released on October 2018
+            This is a major release and expanding to the entire platform including-
+            — Core framework,
+            — Angular Material,
+            — CLI
+            
+            CLI Prompts: 
+            The CLI will now prompt users as when running common commands 
+            like ng new or ng add @angular/material with the intend o
+            f getting aid for building a new project using SCSS.
+
+            Added a new interface — UrlSegment[] to CanLoad interface
+            Added a new interface — DoBootstrap interface
+
+            Angular 7 added a new compiler — Compatibility Compiler (ngcc)
+            Introduce a new Pipe called — KeyValuePipe
+            Angular 7 now supporting to TypeScript 2.9.
+            Added a new elements features — enable Shadow DOM v1 and slots
+            Added a new router features — warn if navigation triggered outside Angular zone
+            Added a new mapping for ngfactory and ngsummary files to their module names in AOT summary resolver.
+            Added a new “original” placeholder value on extracted XMB
+            Added a new ability to recover from malformed URLs
+            Added a new compiler support dot (.) in import statements and also avoid a crash 
+            in ngc-wrapped
+            Update compiler to flatten nested template fns
+
+    Angular 8:
+        Released April 2019
+        Being smaller, faster and easier to use and it will be making Angular developers life easier.
+        Added Support for TypeScript 3.2
+        Added a Navigation Type Available during Navigation in the Router
+        Added pathParamsOrQueryParamsChange mode for runGuardsAndResolvers in the Router
+        Allow passing state to routerLink Directives in the Router
+        Allow passing state to NavigationExtras in the Router
+        Restore the whole object when navigating back to a page managed by Angular Router
+        Added support for SASS
+        Resolve generated Sass/Less files to .css inputs
+        Added Predicate function mode for runGuardsAndResolvers:-
+            This option means guards and resolvers will ignore changes when a provided predicate function returns `false`. This supports use cases where an application needs to ignore some param updates but not others. For example, changing a sort param in the URL might need to be ignored, whereas changing the `project` param might require a re-run of guards and resolvers.
+        Added functionality to mark a control and its descendant controls as touched: — add markAllAsTouched () to AbstractControl
