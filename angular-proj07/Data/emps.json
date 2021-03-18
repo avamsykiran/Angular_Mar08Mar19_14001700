@@ -1,36 +1,37 @@
 {
-  "users":[
+  "users": [
     {
-      "email":"admin@hrm.com",
-      "password":"password1",
-      "role":"admin"
-    },
-    {
-      "email":"hrassociate1@hrm.com",
-      "password":"password1",
-      "role":"hr_associate"
+      "email": "admin2@hrm.com",
+      "password": "$2a$10$WfqwRz/yBaLcWEYFTE52W.iiKLdEkvIky.qUtUIOJjpd1dCuRfvJ2",
+      "role": "admin",
+      "id": 1
     }
   ],
   "depts": [
     {
       "id": 1,
-      "name": "Development"
+      "name": "Development",
+      "userId":1
     },
     {
       "id": 2,
-      "name": "Operations"
+      "name": "Operations",
+      "userId":1
     },
     {
       "id": 3,
-      "name": "Testing"
+      "name": "Testing",
+      "userId":1
     },
     {
       "id": 4,
-      "name": "Accademy"
+      "name": "Accademy",
+      "userId":1
     },
     {
       "id": 5,
-      "name": "Cafetaria"
+      "name": "Cafetaria",
+      "userId":1
     }
   ],
   "emps": [
@@ -41,7 +42,8 @@
       "joindate": "2021-02-24",
       "gender": "m",
       "officeComute": false,
-      "deptId": 1
+      "deptId": 1,
+      "userId":1
     },
     {
       "id": 102,
@@ -50,7 +52,8 @@
       "joindate": "2020-02-24",
       "gender": "m",
       "officeComute": true,
-      "deptId": 1
+      "deptId": 1,
+      "userId":1
     },
     {
       "id": 103,
@@ -59,7 +62,8 @@
       "joindate": "2020-01-24",
       "gender": "f",
       "officeComute": true,
-      "deptId": 3
+      "deptId": 3,
+      "userId":1
     },
     {
       "id": 201,
@@ -68,7 +72,8 @@
       "joindate": "2021-03-16",
       "gender": "f",
       "officeComute": true,
-      "deptId": 2
+      "deptId": 2,
+      "userId":1
     }
   ]
 }

@@ -657,3 +657,59 @@ Advanced Angular 2 to 8 .... 11
         Added Predicate function mode for runGuardsAndResolvers:-
             This option means guards and resolvers will ignore changes when a provided predicate function returns `false`. This supports use cases where an application needs to ignore some param updates but not others. For example, changing a sort param in the URL might need to be ignored, whereas changing the `project` param might require a re-run of guards and resolvers.
         Added functionality to mark a control and its descendant controls as touched: — add markAllAsTouched () to AbstractControl
+
+Token Based authentication
+----------------------------------------
+
+1. request for an access
+    Audence request for an access to th Theater
+    the theter demands some money
+
+    UI request for an access to a BackEndServer
+    the BackEndServer demands som identity (pubKey+privKey)
+
+2. Once the demand is met, we need a proof of authentication...
+
+        The theter issue a ticket to the Audence
+
+        the BackEndServer issues a token (JWT) to the UI
+
+3. UI has to preserve the token for furthur access jsut like
+    the Audence has to preserve the ticket.
+
+4. Audence should submit the ticket, each time a proof of authentication 
+is demandded to access any part of the theater
+
+    UI should send the Token along with any other request
+    to be fulfilled or responded by the BackEndServer
+
+Json Server Auth
+-------------------------------
+
+      /register
+      /signup
+
+      /login  
+      /signin
+
+    Owner    
+    LoggedIn
+    Anonymous/public
+
+    the object whose userId property matches
+    with the id of a user is said to be owned by that user.
+
+    Unix Security kind of thing to provide access control
+
+    No Access                 =  0
+    Read Permission           =  2
+    Write Permission          =  4
+    Read and Write Permission =  6    
+
+
+    accessCode = OUP        000 to 666
+
+        620         owner is allowed with read and Write
+                    LoggedIn user allowed only to read
+                    Public users have no permission at all.
+

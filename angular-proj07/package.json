@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api":"json-server-auth --port 9191 --watch ./Data/emps.json"
+    "api":"json-server-auth --port 9191 --watch ./Data/emps.json -r ./Data/config.json"
   },
   "private": true,
   "dependencies": {
