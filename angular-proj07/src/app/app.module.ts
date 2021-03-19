@@ -26,8 +26,8 @@ import { AuthModule } from './auth/auth.module';
     AuthModule    
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor},
-    {provide:HTTP_INTERCEPTORS,useClass:ErrorHandlerInterceptor}
+    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:ErrorHandlerInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

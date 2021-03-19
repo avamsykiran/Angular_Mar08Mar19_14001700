@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Employee } from './model/employee';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class EmpService {
 

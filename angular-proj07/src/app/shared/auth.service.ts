@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { User } from './model/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class AuthService {
 
@@ -23,20 +23,25 @@ export class AuthService {
   signUp(user:User):Observable<string>{
     return this.http.post<any>(this.registerUrl,user)
     .pipe(
-      map( jwt => this.storeToken(jwt) )      
+      map( jwt => this.storeToken(user.email,jwt) )      
     );
   }
 
   signIn(user:User):Observable<string>{
     return this.http.post<any>(this.loginUrl,user)
     .pipe(
-      map(  jwt => this.storeToken(jwt) )      
+      map(  jwt => this.storeToken(user.email,jwt) )      
     );
   }
 
-  storeToken(jwt:any):string{
+  storeToken(email:string,jwt:any):string{
     let token = jwt.accessToken;
     sessionStorage.setItem("token","Bearer " + token);
+
+    this.getUserByMail(email).subscribe(
+      (usr) => sessionStorage.setItem("user",JSON.stringify(usr))
+    );
+
     return token;
   }  
 
@@ -50,6 +55,16 @@ export class AuthService {
   isLoggedIn():boolean{
     let token = sessionStorage.getItem("token");
     return token!=null && token!=undefined;
+  }
+
+  getCurrentUser():User {
+    let usr:User=null;
+
+    if(this.isLoggedIn){
+      usr = JSON.parse(sessionStorage.getItem("user"));
+    }
+
+    return usr;
   }
 
   logout(){
