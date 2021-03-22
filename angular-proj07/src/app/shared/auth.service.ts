@@ -54,7 +54,7 @@ export class AuthService {
 
   isLoggedIn():boolean{
     let token = sessionStorage.getItem("token");
-    return token!=null && token!=undefined;
+    return token!=null && token!=undefined;    
   }
 
   getCurrentUser():User {

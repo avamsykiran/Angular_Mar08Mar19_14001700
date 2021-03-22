@@ -713,3 +713,47 @@ Json Server Auth
                     LoggedIn user allowed only to read
                     Public users have no permission at all.
 
+Jasmine is a javascript testing library
+============================================================
+    describe        create a test suite.
+    it              create a test case.
+    before          setup method
+    after           teardown method
+
+    describe("test naem ad description",()=>{
+        //all test cases will go
+        //this is the suite
+
+        before(()=>{
+            //this execute before 
+            //executing each test case
+        });
+
+        after(()=>{
+            //this execute after
+            //executing each test case
+        });
+
+        it("test case name or description",()=>{
+            //your test case
+        });
+
+        describe("a sub test suite",()=>{
+            //more test cases.
+        });
+    });
+
+        Jasmine matcher
+        -------------------------------
+
+            expect(testexpression) //create a matcher
+
+                toBe
+                toEqual
+                tobeTruthy
+                toBeFalse
+                toBeNull
+                toBeUndefiend
+                ...etc
+            
+            expect(2*2).toBe(4);
