@@ -5,33 +5,39 @@
       "password": "$2a$10$WfqwRz/yBaLcWEYFTE52W.iiKLdEkvIky.qUtUIOJjpd1dCuRfvJ2",
       "role": "admin",
       "id": 1
+    },
+    {
+      "email": "hra@hrm.com",
+      "password": "$2a$10$93O9Bxdf/GAV/XchbAeZ/ejuBzAHCgDADuCDCN58F0muTR9Ixx0Ca",
+      "role": "hra",
+      "id": 2
     }
   ],
   "depts": [
     {
       "id": 1,
       "name": "Development",
-      "userId":1
+      "userId": 1
     },
     {
       "id": 2,
       "name": "Operations",
-      "userId":1
+      "userId": 1
     },
     {
       "id": 3,
       "name": "Testing",
-      "userId":1
+      "userId": 1
     },
     {
       "id": 4,
       "name": "Accademy",
-      "userId":1
+      "userId": 1
     },
     {
       "id": 5,
       "name": "Cafetaria",
-      "userId":1
+      "userId": 1
     }
   ],
   "emps": [
@@ -43,7 +49,7 @@
       "gender": "m",
       "officeComute": false,
       "deptId": 1,
-      "userId":1
+      "userId": 1
     },
     {
       "id": 102,
@@ -53,7 +59,7 @@
       "gender": "m",
       "officeComute": true,
       "deptId": 1,
-      "userId":1
+      "userId": 1
     },
     {
       "id": 103,
@@ -63,7 +69,7 @@
       "gender": "f",
       "officeComute": true,
       "deptId": 3,
-      "userId":1
+      "userId": 1
     },
     {
       "id": 201,
@@ -73,7 +79,7 @@
       "gender": "f",
       "officeComute": true,
       "deptId": 2,
-      "userId":1
+      "userId": 1
     }
   ]
 }

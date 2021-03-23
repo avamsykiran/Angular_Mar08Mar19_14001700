@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  "title":"HR Portal",
   "signInUrl":"http://localhost:9191/login",
   "signUpUrl":"http://localhost:9191/register",
   "depts":"http://localhost:9191/depts",

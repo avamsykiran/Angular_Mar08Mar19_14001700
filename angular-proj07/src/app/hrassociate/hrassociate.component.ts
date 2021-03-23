@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
+import { User } from '../shared/model/user';
 
 @Component({
   selector: 'app-hrassociate',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HrassociateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  logout(){
+    this.authService.logout();
+    this.router.navigateByUrl("/");
+  }
 }
